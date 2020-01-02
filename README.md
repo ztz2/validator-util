@@ -5,7 +5,7 @@
 
 </div>
 
-用于校验 `身份证号码` 和 `法人和其他组织统一社会信用代码` 的工具。(基于 <a href="https://github.com/bluesky335/IDCheck" target="_blank">IDCheck</a>，这是JS的实现方式（搬砖手动狗头）)
+用于校验 `身份证号码` 和 `法人和其他组织统一社会信用代码` 的工具。(基于 <a href="https://github.com/bluesky335/IDCheck" target="_blank">IDCheck</a>，这是JS的实现方式（搬砖手动狗头），支持CMD和AMD方式引入。)
 
 计算规则参考国家标准文件：
 
