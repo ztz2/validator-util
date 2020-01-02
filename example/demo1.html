@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>validators demo</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    input[type="number"]::-webkit-textfield-decoration-container {
+      background: none;
+    }
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+    #app{
+      display: inline-block;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 200px;
+      transform: translateX(-50%);
+    }
+
+
+    .request-num, .btn{
+      width: 300px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 30px;
+      text-align: center;
+      overflow: hidden;
+      font-weight: 600;
+      font-size: 24px;
+    }
+    .request-num{
+      border: 2px solid #ccc;
+      outline: none;
+      padding: 4px 10px;
+      display: block;
+    }
+    .request-num:hover, .request-num:focus{
+      border-color: #fd79a8;
+    }
+
+    .btn{
+      margin-top: 10px;
+      display: block;
+      border: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .btn__text{
+      position: relative;
+      color: #2d3436;
+      display: inline-block;
+    }
+    .btn__text::before{
+      content: attr(data-text);
+      width: 0;
+      left: 0;
+      color: #fff;
+      transition: .6s;
+      position: absolute;
+      overflow: hidden;
+    }
+    .btn:hover .btn__text::before{
+      width: 100%;
+    }
+
+    .btn::before{
+      content: '';
+      width: 0;
+      height: 100%;
+      position: absolute;
+      background: #fd79a8;
+      top: 0;
+      right: 0;
+      transition: .6s;
+    }
+    .btn:hover::before{
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<script src="../dist/validators.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
