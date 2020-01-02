@@ -6,94 +6,82 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>validators demo</title>
   <style>
-    *{
-      box-sizing: border-box;
+    body{margin: 0; padding: 18px 24px;}
+    .form{
+      margin-top: -30px;
     }
-    input[type="number"]::-webkit-textfield-decoration-container {
-      background: none;
+    .form-item{
+      margin-top: 30px;
     }
-    input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-    }
-    #app{
-      display: inline-block;
-      margin: 0 auto;
-      position: absolute;
-      left: 50%;
-      top: 200px;
-      transform: translateX(-50%);
-    }
-
-
-    .request-num, .btn{
-      width: 300px;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 30px;
-      text-align: center;
-      overflow: hidden;
-      font-weight: 600;
-      font-size: 24px;
-    }
-    .request-num{
-      border: 2px solid #ccc;
+    .form-item input{
       outline: none;
-      padding: 4px 10px;
-      display: block;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
     }
-    .request-num:hover, .request-num:focus{
-      border-color: #fd79a8;
+    .form-item span{
+      color: #666;
     }
-
-    .btn{
-      margin-top: 10px;
-      display: block;
-      border: none;
-      cursor: pointer;
-      position: relative;
+    .form-item-msg{
+      color: #666;
     }
-
-    .btn__text{
-      position: relative;
-      color: #2d3436;
-      display: inline-block;
+    .form-item-msg--error{
+      color: #f56c6c!important;
     }
-    .btn__text::before{
-      content: attr(data-text);
-      width: 0;
-      left: 0;
-      color: #fff;
-      transition: .6s;
-      position: absolute;
-      overflow: hidden;
+    .form-item-msg--success{
+      color: #67C23A!important;
     }
-    .btn:hover .btn__text::before{
-      width: 100%;
-    }
-
-    .btn::before{
-      content: '';
-      width: 0;
-      height: 100%;
-      position: absolute;
-      background: #fd79a8;
-      top: 0;
-      right: 0;
-      transition: .6s;
-    }
-    .btn:hover::before{
-      width: 100%;
+    .form-item-label{
+      margin-bottom: 6px;
+      color: #333;
     }
   </style>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+  <div class="form">
+    <div class="form-item">
+      <div class="form-item-label">身份证</div>
+      <div class="form-item-content">
+        <input type="text" name="id" placeholder="请输入身份证号码" value="11010519491231002X">
+        <span class="form-item-msg form-item-msg--success">验证成功</span>
+      </div>
+    </div>
+    <a href="" target="_blank"></a>
+    <div class="form-item">
+      <div class="form-item-label">统一社会信用代码</div>
+      <div class="form-item-content">
+        <input type="text" name="usci" placeholder="统一社会信用代码" value="91350100M000100Y43">
+        <span class="form-item-msg form-item-msg--success">验证成功</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="//lib.baomitu.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="../dist/validators.min.js"></script>
 <script>
-
+  !function () {
+    $('body').on('change', 'input', function () {
+      var value = ''
+      switch ($(this).prop('name')) {
+        case 'id':
+          value = $(this).val()
+          if (validators.isID(value)) {
+            $(this).siblings('span').text('验证成功').addClass('form-item-msg--success').removeClass('form-item-msg--error')
+          } else {
+            $(this).siblings('span').text('验证失败').addClass('form-item-msg--error').removeClass('form-item-msg--success')
+          }
+          break
+        case 'usci':
+          value = $(this).val()
+          if (validators.isUSCI(value)) {
+            $(this).siblings('span').text('验证成功').addClass('form-item-msg--success').removeClass('form-item-msg--error')
+          } else {
+            $(this).siblings('span').text('验证失败').addClass('form-item-msg--error').removeClass('form-item-msg--success')
+          }
+          break
+      }
+    })
+  }()
 </script>
 </body>
 </html>
