@@ -53,7 +53,7 @@ IE5+和现代浏览器
   validators.extend({
       isEmail: function (value) {
         return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
-      },
+      }
   })
   // 调用
   validators.isEmail('123456789@gmail.com')
