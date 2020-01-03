@@ -41,7 +41,7 @@ IE5+和现代浏览器
 - 身份证号码
 
 ```
-  if (validators.isID('91350100M000100Y43')) {
+  if (validators.isID('11010519491231002X')) {
 	console.log('✅正确')
   } else {
     console.log('✅错误')
