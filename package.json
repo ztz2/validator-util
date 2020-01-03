@@ -1,25 +1,25 @@
 {
-  "name": "jquery-fetch",
+  "name": "validators",
   "version": "0.0.1",
-  "description": "给jquery ajax增加一个自动取消重复请求的功能",
-  "main": "dict/jquery-fetch.min.js",
+  "description": "校验器",
+  "main": "dict/validators.min.js",
   "scripts": {
     "build": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChrisDowney1996/jquery-fetch.git"
+    "url": "git+https://github.com/ChrisDowney1996/validators.git"
   },
   "keywords": [
-    "jquery-fetch"
+    "validators", "validator"
   ],
   "author": "Andou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ChrisDowney1996/jquery-fetch/issues"
+    "url": "https://github.com/ChrisDowney1996/validators/issues"
   },
-  "homepage": "https://github.com/ChrisDowney1996/jquery-fetch#readme",
+  "homepage": "https://github.com/ChrisDowney1996/validators#readme",
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-contrib-jshint": "^2.0.0",
