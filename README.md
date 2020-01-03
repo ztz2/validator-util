@@ -47,6 +47,8 @@ IE5+和现代浏览器
     console.log('✅错误')
   }
 ```
+# Go语言版本
+LiuWanLin [IDCheck](https://github.com/bluesky335/IDCheck)
 
 
 # License
