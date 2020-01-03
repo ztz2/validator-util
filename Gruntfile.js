@@ -5,6 +5,9 @@ module.exports = function(grunt) {
       build: {
         src: 'src/validators.js',
         dest: 'dist/validators.min.js'
+      },
+      options: {
+        banner: '/*!\n * <%= pkg.name %> v<%= pkg.version %>\n * (c) <%= pkg.author %>\n * Released under the <%= pkg.license %> License\n*/'
       }
     },
     jshint: {
@@ -13,7 +16,7 @@ module.exports = function(grunt) {
         trailing: true
       },
       files: ['Gruntfile.js', 'src/**/*.js']
-    },
+    }
   })
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.registerTask('default', ['uglify'])
