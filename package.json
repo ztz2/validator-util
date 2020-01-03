@@ -1,7 +1,7 @@
 {
   "name": "validators",
   "version": "0.0.1",
-  "description": "校验器",
+  "description": "校验工具",
   "main": "dict/validators.min.js",
   "scripts": {
     "build": "grunt",
