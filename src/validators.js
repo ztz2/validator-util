@@ -101,7 +101,7 @@ void function (global, factory) {
     };
     var idStr = value.toUpperCase()
     var reg = /^[0-9]{17}[0-9X]$/
-    if (!reg.exec(idStr)) {
+    if (!reg.test(idStr)) {
       return false
     }
     var sum = 0
@@ -177,7 +177,7 @@ void function (global, factory) {
     }
     var usciStr = value.toUpperCase()
     var reg = /^[A-Z0-9]{18}$/
-    if (!reg.exec(usciStr)) {
+    if (!reg.test(usciStr)) {
       return false
     }
     var weight = 0, sum = 0, index = 0, c, v, usciStrRange = usciStr.slice(0, 17)
