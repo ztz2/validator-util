@@ -1,11 +1,11 @@
-# 身份证号码、法人和其他组织统一社会信用代码 的合法性校验
+# 校验工具，内置了身份证号码、法人和其他组织统一社会信用代码 的合法性校验
 <div align="center">
 
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 </div>
 
-用于校验 `身份证号码` 和 `法人和其他组织统一社会信用代码` 的工具。(基于 <a href="https://github.com/bluesky335/IDCheck" target="_blank">IDCheck（Go语言）</a>，这是JS的实现方式（搬砖手动狗头），支持CMD和AMD方式引入。)
+校验 `身份证号码` 和 `法人和其他组织统一社会信用代码` 是基于 [IDCheck（Go语言）](https://github.com/bluesky335/IDCheck)，这是JS的实现方式，支持CMD和AMD方式引入。
 
 计算规则参考国家标准文件：
 
@@ -46,6 +46,39 @@ IE5+和现代浏览器
   } else {
     console.log('✅错误')
   }
+```
+- 扩展（基于静态方法）
+
+```
+  validators.extend({
+      isEmail: function (value) {
+        return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
+      },
+  })
+  // 调用
+  validators.isEmail('123456789@gmail.com')
+```
+- 扩展（基于原型实例）
+
+```
+  validators.fn.extend({
+      isEmail: function (value) {
+        return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
+      }
+  })
+  // 调用
+  validators().isEmail('123456789@gmail.com')
+```
+- 扩展（原型实例和静态方法）
+```
+  validators.extend({
+      isEmail: function (value) {
+        return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value)
+      }
+  }, 'all')
+  // 调用
+  validators().isEmail('123456789@gmail.com')
+  validators.isEmail('123456789@gmail.com')
 ```
 # Go语言版本
 LiuWanLin [IDCheck](https://github.com/bluesky335/IDCheck)
