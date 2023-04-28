@@ -43,6 +43,7 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/type-annotation-spacing": "error",
     "no-var": "error",
+    "no-empty": 0,
     "prefer-const": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",

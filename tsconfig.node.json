@@ -4,8 +4,10 @@
     "src/**/*.test.ts"
   ],
   "compilerOptions": {
+    "declaration": true,
     "target": "ES5",
     "module": "CommonJS",
-    "outDir": "./"
+    "outDir": "./",
+    "declarationDir": "./"
   }
 }

@@ -1,6 +1,10 @@
 {
   "include": [
+    "global.d.ts",
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.js"
   ],
   "compilerOptions": {
     "strict": true,
@@ -13,7 +17,7 @@
     "downlevelIteration": true,
     "newLine": "LF",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "preserveSymlinks": true,
     "skipLibCheck": true,
     "lib": ["ESNext", "DOM"],

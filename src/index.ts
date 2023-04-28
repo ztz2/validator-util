@@ -11,7 +11,7 @@ import isTrainNumber from './lib/is-train-number';
 import isUSCI from './lib/is-usci';
 import isZhCN from './lib/is-zh-ch';
 
-const validatorUtil = {
+export {
   isDomainName,
   isEmail,
   isHouseholdRegister,
@@ -23,7 +23,5 @@ const validatorUtil = {
   isTelPhone,
   isIMEI,
   isTrainNumber,
-  isZhCN
+  isZhCN,
 };
-
-export default validatorUtil;

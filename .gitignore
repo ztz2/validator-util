@@ -43,4 +43,4 @@ es
 lib
 typing
 index.js
-index.html
+index.d.ts
