@@ -9,5 +9,3 @@ node_modules
 ./typing
 ./index.js
 ./index.html
-./validator-util.js
-./validator-util.min.js

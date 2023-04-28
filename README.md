@@ -15,29 +15,46 @@
 </p>
 
 - 💪 基于Typescript构建
-- ⚙️ 单元测试
+- ⚙️ 单元测试覆盖
 
 
 ## 快速开始
 ES6
 ```javascript
-import { isUSCI } from 'validator';
+import { isEmail } from 'validator-util';
 
-isUSCI('91350100M000100Y43'); // -> true
+isEmail('hello@world.com'); // -> true
 ```
 
-Tree-shakeable ES imports
+支持Tree shaking的导入
 ```javascript
-import { isUSCI } from 'validator/dist/es/is-usci';
+import isEmail from 'validator-util/es/is-email';
 
-isUSCI('91350100M000100Y43'); // -> true
+isEmail('hello@world.com'); // -> true
 ```
 
 其他方式导入
 ```javascript
-var validator = require('validator');
+var validator = require('validator-util');
 
-validator.isEmail('foo@bar.com'); // -> true
+validator.isEmail('hello@world.com'); // -> true
+```
+
+浏览器中直接运行，复制文件`validator-util.js`或`validator-util.min.js`到项目中即可。
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浏览器中直接运行</title>
+</head>
+<body>
+<script src="validator-util.min.js"></script>
+<script>
+  window.validatorUtil.isEmail('hello@world.com'); // -> true
+</script>
+</body>
+</html>
 ```
 
 ## API
@@ -66,6 +83,13 @@ LiuWanLin [IDCheck](https://github.com/bluesky335/IDCheck)
 #### Go语言版本
 LiuWanLin [IDCheck](https://github.com/bluesky335/IDCheck)
 
+
+## API
+| API名称       | 描述                          |
+|-------------|-----------------------------|
+| isEmail     | 邮箱校验(兼容中文邮箱校验)              |
+| isExactID   | 身份证校验（严格模式）                 |
+| isExactUSCI | 法人和其他组织统一社会信用代码的合法性校验（严格模式） |
 
 ### 展示
 

@@ -16,6 +16,10 @@ exports.default = defineConfig({
       exclude: "node_modules/**",
       typescript: require("typescript"),
     }),
-    terser()
+    terser({
+      format: {
+        comments: 'some'
+      }
+    })
   ],
 });
