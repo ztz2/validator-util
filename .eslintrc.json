@@ -1,6 +1,8 @@
 {
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended"
