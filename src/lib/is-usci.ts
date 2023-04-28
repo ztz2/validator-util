@@ -2,12 +2,12 @@
  * @description 校验法人和其他组织统一社会信用代码的合法性
  * @param {string} value 验证参数
  * @param {Object=} options 可选项
- * @param {boolean=} options.exact 是否启用严格模式，默认true，非严格模式使用正则，严格模式进行计算（计算规则参考“中国国家标准化管理委员会”官方文档：http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=24691C25985C1073D3A7C85629378AC0）
+ * @param {boolean=} options.exact 是否启用严谨校验，默认true，非严谨校验使用正则，严谨校验进行计算，计算规则参考“中国国家标准化管理委员会” [GB 32100-2015 法人和其他组织统一社会信用代码编码规则](http://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=24691C25985C1073D3A7C85629378AC0)
  * @return {boolean}
  */
 export default function isUSCI (value: string, options?: { exact?: boolean }): boolean {
-  // 非严格模式
-  if (options?.exact === false) {
+  // 非严谨模式
+  if (options?.exact !== true) {
     const rex = /^(([0-9A-Za-z]{15})|([0-9A-Za-z]{18})|([0-9A-Za-z]{20}))$/;
     return rex.test(value);
   }

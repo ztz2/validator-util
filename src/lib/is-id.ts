@@ -2,12 +2,12 @@
  * @description 校验身份证，支持一代身份证、二代身份证
  * @param {string} value 验证参数
  * @param {Object=} options 可选项
- * @param {boolean=} options.exact 是否启用严格模式，默认true，非严格模式使用正则，严格模式进行计算（计算规则参考“中国国家标准化管理委员会”官方文档：http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=080D6FBF2BB468F9007657F26D60013E）
+ * @param {boolean=} options.exact 是否启用严谨校验，默认false，注意严谨校验不能用在第一代身份证。非严谨使用正则，严谨校验进行计算，计算规则参考“中国国家标准化管理委员会” [GB 11643-1999 公民身份证号码](http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=080D6FBF2BB468F9007657F26D60013E)
  * @return {boolean}
  */
 export default function isID (value: string, options?: { exact?: boolean }): boolean {
-  // 非严格模式
-  if (options?.exact === false) {
+  // 非严谨模式
+  if (options?.exact !== true) {
     const rex = /^\d{6}((((((19|20)\d{2})(0[13-9]|1[012])(0[1-9]|[12]\d|30))|(((19|20)\d{2})(0[13578]|1[02])31)|((19|20)\d{2})02(0[1-9]|1\d|2[0-8])|((((19|20)([13579][26]|[2468][048]|0[48]))|(2000))0229))\d{3})|((((\d{2})(0[13-9]|1[012])(0[1-9]|[12]\d|30))|((\d{2})(0[13578]|1[02])31)|((\d{2})02(0[1-9]|1\d|2[0-8]))|(([13579][26]|[2468][048]|0[048])0229))\d{2}))(\d|X|x)$/;
     return rex.test(value);
   }
