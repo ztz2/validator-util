@@ -1,11 +1,5 @@
 # validator-util
 <a href="https://www.npmjs.com/org/api-helper"><img src="https://img.shields.io/npm/l/@api-helper/core" alt="Package License" /></a>
-[![NPM version][npm-image]][npm-url]
-[![CI][ci-image]][ci-url]
-[![Coverage][codecov-image]][codecov-url]
-[![Downloads][downloads-image]][npm-url]
-[![Gitter][gitter-image]][gitter-url]
-[![Disclose a vulnerability][huntr-image]][huntr-url]
 
 字符校验工具库，内置各种校验规则
 
