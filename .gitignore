@@ -39,8 +39,8 @@ lerna-debug.log*
 !.pre.json
 !.README.md
 
-es
-lib
-typing
-index.js
-index.d.ts
+/es
+/lib
+/typing
+/index.js
+/index.d.ts
