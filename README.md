@@ -44,7 +44,7 @@ var validator = require('validator-util');
 validator.isEmail('hello@world.com'); // -> true
 ```
 
-浏览器中直接运行，复制文件`validator-util.js`或`validator-util.min.js`到项目中即可。
+浏览器中直接运行：复制文件`validator-util.js`到项目中即可。
 ```html
 <!DOCTYPE html>
 <html lang="en">
