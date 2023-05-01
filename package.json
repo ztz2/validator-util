@@ -1,6 +1,6 @@
 {
   "name": "validator-util",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "字符校验工具库",
   "main": "index.js",
   "module": "es/index.js",
