@@ -5,7 +5,7 @@
 
 - 💪 基于Typescript构建.
 - ⚙️ 单元测试覆盖.
-- ⚙️ Browser/Node/esModule support.
+- ✨ Browser/Node/esModule support.
 
 
 ## 快速开始
