@@ -11,6 +11,12 @@ module.exports = {
     path: resolve(__dirname, ''),
     library: 'validatorUtil',
     libraryTarget: 'umd',
+    environment: {
+      // 关闭输出头部代码使用const关键字
+      const: false,
+      // 关闭输出头部代码使用箭头函数
+      arrowFunction: false
+    }
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -31,10 +37,7 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          loader: 'babel-loader'
         }
       }
     ],
@@ -54,14 +57,14 @@ module.exports = {
 (c) 2013-present ${packageJSON.author.name}
 Released under the MIT License.`
     ),
-    new webpack.DefinePlugin({
-      process: {
-        env: {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
-          // 在浏览器环境中，process.env 属性可能并不存在，因此您可以手动定义这些属性：
-          APP_ENV: JSON.stringify('browser')
-        }
-      }
-    })
+    // new webpack.DefinePlugin({
+    //   process: {
+    //     env: {
+    //       NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+    //       // 在浏览器环境中，process.env 属性可能并不存在，因此您可以手动定义这些属性：
+    //       APP_ENV: JSON.stringify('browser')
+    //     }
+    //   }
+    // })
   ]
 };
