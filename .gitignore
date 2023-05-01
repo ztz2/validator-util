@@ -34,6 +34,7 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# changeset
 .changeset/*
 !.config.json
 !.pre.json
@@ -44,3 +45,6 @@ lerna-debug.log*
 /typing
 /index.js
 /index.d.ts
+
+/src/lib/is-.ts
+/test/.test.ts
