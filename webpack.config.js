@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const packageJSON = require('./package.json');
 
 module.exports = {
   mode: 'production',
@@ -48,6 +49,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.BannerPlugin(
+      `${packageJSON.name} v${packageJSON.version}
+(c) 2013-present ${packageJSON.author.name}
+Released under the MIT License.`
+    ),
     new webpack.DefinePlugin({
       process: {
         env: {
